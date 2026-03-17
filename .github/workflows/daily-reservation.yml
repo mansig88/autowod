@@ -3,11 +3,18 @@ name: Daily Reservation
 
 # When does this run?
 on:
-  # Runs at 21:30 UTC (22:30/23:30 in Spain)
-  # - 22:30 (10:30 PM) during winter (CET/UTC+1)
-  # - 23:30 (11:30 PM) during summer (CEST/UTC+2)
   schedule:
-    - cron: '30 21 * * *'
+    # We run twice to roughly hit 22:30 in Spain all year:
+    # - 20:31 UTC:
+    #     * 21:31 in winter (CET, UTC+1)
+    #     * 22:31 in summer (CEST, UTC+2)
+    # - 21:31 UTC:
+    #     * 22:31 in winter (CET, UTC+1)
+    #     * 23:31 in summer (CEST, UTC+2)
+    # This guarantees at least one run around 22:30 local time in both seasons,
+    # at the cost of one extra daily run.
+    - cron: '31 20 * * *'
+    - cron: '31 21 * * *'
 
   # Also allows you to run it manually from the Actions tab
   workflow_dispatch:

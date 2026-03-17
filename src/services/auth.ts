@@ -18,8 +18,11 @@ export async function login(
 
   await page.waitForNavigation();
 
-  // click in "Don't remember this browser"
-  await page.click('#body_body_CtlConfiar_CtlNoSeguro');
-
-  await page.waitForNetworkIdle();
+  // click in "Don't remember this browser" (second button in the device choice)
+  const secondButtonSelector = '#body_body_CtlUp label.button:nth-of-type(2)';
+  const secondButton = await page.$(secondButtonSelector);
+  if (secondButton) {
+    await secondButton.click();
+    await page.waitForNetworkIdle();
+  }
 }

@@ -84,10 +84,10 @@ jobs:
           # Schedule
           #MONDAY: ${{ secrets.MONDAY }}
           #TUESDAY: ${{ secrets.TUESDAY }}
-          #WEDNESDAY: ${{ secrets.WEDNESDAY }}
+          WEDNESDAY: ${{ secrets.WEDNESDAY }}
           #THURSDAY: ${{ secrets.THURSDAY }}
           #FRIDAY: ${{ secrets.FRIDAY }}
-          SATURDAY: ${{ secrets.SATURDAY }}
+          #SATURDAY: ${{ secrets.SATURDAY }}
           #SUNDAY: ${{ secrets.SUNDAY }}
 
           # Configuration

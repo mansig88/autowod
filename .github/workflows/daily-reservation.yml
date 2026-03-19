@@ -13,9 +13,13 @@ on:
     #     * 23:31 in summer (CEST, UTC+2)
     # This guarantees at least one run around 22:30 local time in both seasons,
     # at the cost of one extra daily run.
-    #- cron: '31 20 * * *'
-    #- cron: '31 21 * * *'
-    - cron: '54 6 * * 4'
+    # 1. Horario de INVIERNO (CET, UTC+1):
+    # 05:53 UTC son las 06:53 en España.
+    - cron: '53 5 * * 4'
+
+    # 2. Horario de VERANO (CEST, UTC+2):
+    # 04:53 UTC son las 06:53 en España.
+    # - cron: '53 4 * * 4'
 
   # Also allows you to run it manually from the Actions tab
   workflow_dispatch:

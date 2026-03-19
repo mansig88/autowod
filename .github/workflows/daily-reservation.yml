@@ -87,13 +87,13 @@ jobs:
           TWO_CAPTCHA_API_KEY: ${{ secrets.TWO_CAPTCHA_API_KEY }}
 
           # Schedule
-          #MONDAY: ${{ secrets.MONDAY }}
+          MONDAY: ${{ secrets.MONDAY }}
           TUESDAY: ${{ secrets.TUESDAY }}
-          #WEDNESDAY: ${{ secrets.WEDNESDAY }}
-          #THURSDAY: ${{ secrets.THURSDAY }}
+          WEDNESDAY: ${{ secrets.WEDNESDAY }}
+          THURSDAY: ${{ secrets.THURSDAY }}
           FRIDAY: ${{ secrets.FRIDAY }}
-          #SATURDAY: ${{ secrets.SATURDAY }}
-          #SUNDAY: ${{ secrets.SUNDAY }}
+          SATURDAY: ${{ secrets.SATURDAY }}
+          SUNDAY: ${{ secrets.SUNDAY }}
 
           # Configuration
           AVAILABLE_DAYS: ${{ secrets.AVAILABLE_DAYS }}
